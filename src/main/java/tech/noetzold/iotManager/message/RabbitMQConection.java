@@ -28,16 +28,24 @@ public class RabbitMQConection {
 
     private void adiciona(){
         DirectExchange troca = this.trocaDireta();
-        Queue filaDistance = this.fila(RabbitmqConstantes.QUEUE_DISTANCE);
+        Queue distanceQueue = this.fila(RabbitmqConstantes.QUEUE_DISTANCE);
+        Queue humidityQueue = this.fila(RabbitmqConstantes.QUEUE_HUMIDITY);
+        Queue temperatureQueue = this.fila(RabbitmqConstantes.QUEUE_TEMPERATURE);
 
 
-        Binding ligacao = this.relacionamento(filaDistance, troca);
+        Binding distanceBinding = this.relacionamento(distanceQueue, troca);
+        Binding humidityBinding= this.relacionamento(humidityQueue, troca);
+        Binding temperatureBinding = this.relacionamento(temperatureQueue, troca);
 
         //Criando as filas no RabbitMQ
-        this.amqpAdmin.declareQueue(filaDistance);
+        this.amqpAdmin.declareQueue(distanceQueue);
+        this.amqpAdmin.declareQueue(humidityQueue);
+        this.amqpAdmin.declareQueue(temperatureQueue);
 
         this.amqpAdmin.declareExchange(troca);
 
-        this.amqpAdmin.declareBinding(ligacao);
+        this.amqpAdmin.declareBinding(distanceBinding);
+        this.amqpAdmin.declareBinding(humidityBinding);
+        this.amqpAdmin.declareBinding(temperatureBinding);
     }
 }
