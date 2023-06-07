@@ -18,7 +18,7 @@ public class HumidityConsumer {
     HumidityService humidityService;
 
     @Transactional
-    @RabbitListener(queues = RabbitmqConstantes.QUEUE_TEMPERATURE)
+    @RabbitListener(queues = RabbitmqConstantes.QUEUE_HUMIDITY)
     private void consumerHumidity(String mensagem) throws JsonProcessingException {
         Humidity humidity = new ObjectMapper().readValue(mensagem, Humidity.class);
         humidityService.saveHumidity(humidity);

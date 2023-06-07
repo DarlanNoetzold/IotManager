@@ -45,9 +45,9 @@ while True:
             humidity = values[2].split(':')[1].strip()
 
             # Cria o objeto JSON com os atributos e valores correspondentes
-            message_distance = json.dumps({"id": 0, "distance": distance})
-            message_temperature = json.dumps({"id": 0, "temperature": temperature})
-            message_humidity = json.dumps({"id": 0, "humidity": humidity})
+            message_distance = json.dumps({"id": 0, "distance": float(distance)})
+            message_temperature = json.dumps({"id": 0, "temperature": float(temperature)})
+            message_humidity = json.dumps({"id": 0, "humidity": float(humidity)})
 
             # Envia os valores para as filas correspondentes
             channel.basic_publish(exchange='', routing_key=queue_distance, body=message_distance)

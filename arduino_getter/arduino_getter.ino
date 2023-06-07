@@ -26,13 +26,13 @@ void loop() {
   // Exibe os valores no monitor serial
   Serial.print("Distancia: ");
   Serial.print(distance);
-  Serial.print(" cm\t");
+  Serial.print(" \t");
 
   Serial.print("Temperatura: ");
   Serial.print(temperature);
-  Serial.print(" °C\t");
+  Serial.print(" \t");
 
   Serial.print("Umidade: ");
   Serial.print(humidity);
-  Serial.println(" %");
+  Serial.println(" ");
 }
