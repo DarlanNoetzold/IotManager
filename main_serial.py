@@ -1,5 +1,6 @@
 import serial
 import pika
+import json
 
 # Configurações do RabbitMQ
 rabbitmq_host = 'localhost'
@@ -43,10 +44,15 @@ while True:
             temperature = values[1].split(':')[1].strip()
             humidity = values[2].split(':')[1].strip()
 
+            # Cria o objeto JSON com os atributos e valores correspondentes
+            message_distance = json.dumps({"id": 0, "distance": distance})
+            message_temperature = json.dumps({"id": 0, "temperature": temperature})
+            message_humidity = json.dumps({"id": 0, "humidity": humidity})
+
             # Envia os valores para as filas correspondentes
-            channel.basic_publish(exchange='', routing_key=queue_distance, body=distance)
-            channel.basic_publish(exchange='', routing_key=queue_temperature, body=temperature)
-            channel.basic_publish(exchange='', routing_key=queue_humidity, body=humidity)
+            channel.basic_publish(exchange='', routing_key=queue_distance, body=message_distance)
+            channel.basic_publish(exchange='', routing_key=queue_temperature, body=message_temperature)
+            channel.basic_publish(exchange='', routing_key=queue_humidity, body=message_humidity)
 
     except KeyboardInterrupt:
         # Fecha a conexão com o RabbitMQ e a porta serial
