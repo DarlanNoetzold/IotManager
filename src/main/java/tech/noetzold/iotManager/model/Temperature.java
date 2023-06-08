@@ -21,4 +21,7 @@ public class Temperature {
     @NotNull
     private Double temperature;
 
+    @NotNull
+    private String device;
+
 }

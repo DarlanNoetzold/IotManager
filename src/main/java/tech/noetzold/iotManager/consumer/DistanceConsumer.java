@@ -19,7 +19,7 @@ public class DistanceConsumer {
 
     @Transactional
     @RabbitListener(queues = RabbitmqConstantes.QUEUE_DISTANCE)
-    private void consumerDistace(String mensagem) throws JsonProcessingException {
+    private void consumerDistance(String mensagem) throws JsonProcessingException {
         Distance distance = new ObjectMapper().readValue(mensagem, Distance.class);
         distanceService.saveDistance(distance);
     }

@@ -20,4 +20,7 @@ public class Distance {
 
     @NotNull
     private Double distance;
+
+    @NotNull
+    private String device;
 }

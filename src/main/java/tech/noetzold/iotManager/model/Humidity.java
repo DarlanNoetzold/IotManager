@@ -20,4 +20,7 @@ public class Humidity {
 
     @NotNull
     private Double humidity;
+
+    @NotNull
+    private String device;
 }
