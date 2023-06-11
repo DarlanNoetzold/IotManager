@@ -28,9 +28,19 @@ UMa aplicação para gerenciamento de informações vindas de dispositivos IOT's
 ![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/d2ad091f-750c-480d-ba87-f1918abfd85b)
 
 * Lembrando que basta olha no [script que você vai dar upload](https://github.com/DarlanNoetzold/IotManager/blob/main/arduino_getter/arduino_getter.ino) no arduino para ver onde conectar os pinos exatamente;
-* Após subir esse script você deve executar um docker compose up no arquivo yml que esta no repositório, ele vai inicializar o RabbitMQ;
+* Após subir esse script você deve executar um docker compose up no [arquivo yml](https://github.com/DarlanNoetzold/IotManager/blob/main/docker-compose.yml) que esta no repositório, ele vai inicializar o RabbitMQ;
 * Depois execute a aplicação SpringBoot para consumir as filas do RabbitMQ;
-* E por último inicialize o script Pyhton para ler o Monitor Serial e mandar as informações capturadas para as filas respectivas.
+* E por último inicialize o [script Pyhton](https://github.com/DarlanNoetzold/IotManager/blob/main/main_serial.py) para ler o Monitor Serial e mandar as informações capturadas para as filas respectivas.
+* Desta forma você verá estas informações no Monirtor Serial de cada arduino:
+
+![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/ca2bc540-2fe3-47d3-acf0-b4acbb5f1066)
+
+* E verá essas informações sendo enviadas para suas filas específicas e sendo consumidas pelo SpringBoot, para salvar neste banco:
+
+![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/2cfe675c-cc23-45aa-aa0f-e01d40dabdce)
+
+
+---
 
 
 ⭐️ From [DarlanNoetzold](https://github.com/DarlanNoetzold)
