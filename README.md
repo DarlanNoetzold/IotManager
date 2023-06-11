@@ -21,6 +21,7 @@ UMa aplicação para gerenciamento de informações vindas de dispositivos IOT's
 
 ## Como Utilizar:
 * Para utilizar basta fazer as conexões como esta nas imagens abaixo:
+<br>
 ![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/dcf10655-4719-4786-bfb5-48fcdfded9b8)
 ![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/d2ad091f-750c-480d-ba87-f1918abfd85b)
 
