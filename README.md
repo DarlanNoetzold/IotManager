@@ -1,5 +1,5 @@
 # IotManager
-UMa aplicação para gerenciamento de informações vindas de dispositivos IOT's
+Uma aplicação para gerenciamento de informações vindas de dispositivos IOT's
 
 ## Desenvolvimento:
 * Foi usado Java 17 como linguagem base;
