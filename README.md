@@ -27,5 +27,10 @@ UMa aplicação para gerenciamento de informações vindas de dispositivos IOT's
 
 ![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/d2ad091f-750c-480d-ba87-f1918abfd85b)
 
+* Lembrando que basta olha no [script que você vai dar upload](https://github.com/DarlanNoetzold/IotManager/blob/main/arduino_getter/arduino_getter.ino) no arduino para ver onde conectar os pinos exatamente;
+* Após subir esse script você deve executar um docker compose up no arquivo yml que esta no repositório, ele vai inicializar o RabbitMQ;
+* Depois execute a aplicação SpringBoot para consumir as filas do RabbitMQ;
+* E por último inicialize o script Pyhton para ler o Monitor Serial e mandar as informações capturadas para as filas respectivas.
+
 
 ⭐️ From [DarlanNoetzold](https://github.com/DarlanNoetzold)
