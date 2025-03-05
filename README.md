@@ -1,46 +1,39 @@
 # IotManager
-Uma aplicação para gerenciamento de informações vindas de dispositivos IOT's
+An application for managing information from IoT devices
 
-## Desenvolvimento:
-* Foi usado Java 17 como linguagem base;
-* Foi desenvolvido com Spring Boot;
-* O Banco utilizado foi o PostgreSQL;
-* Mensageiria construída com RabbitMQ;
-* Uso do docker para configuração e implantação do projeto;
-* Foi usado Python para o script de leitura do Monitor Serial e envio das infomrações para as filas;
-* Foram usados dois arduinos, um Arduino Uno e um Mega 2560;
-* Nesses arduinos foram carragados um script em C para cappturar as informações dos Sensores;
-* Foram usados 4 sensosres, 2 sensores Ultraônicos e 2 sensores de Umidade e Temperatura.
+## Development:
+* Java 17 was used as the base language;
+* It was developed with Spring Boot;
+* The database used was PostgreSQL;
+* Messaging built with RabbitMQ;
+* Docker was used to configure and deploy the project;
+* Python was used for the script to read the Serial Monitor and send the information to the queues;
+* Two Arduinos were used, an Arduino Uno and a Mega 2560;
+* A C script was loaded onto these Arduinos to capture information from the Sensors;
+* 4 sensors were used, 2 Ultraonic sensors and 2 Humidity and Temperature sensors.
 
-## Projeto:
-* Projeto para testar a Eficâcia do SpringBoot com RabbitMq em uma Aplicação IoT;
-* O objetivo é analisar a performance com o envio de diversas mensagens de dois dispositivos diferentes;
-* Estas mensagens devem se consumidas e salvas no banco de dados, tratando erros e mapeando as falhas;
-* Em futuras atualizações é possível adicionar alguma funcionalidade para estes dados, seja visualização ou envio destas informações.
+## Project:
+* Project to test the effectiveness of SpringBoot with RabbitMq in an IoT application;
+* The goal is to analyze the performance of sending several messages from two different devices; * These messages must be consumed and saved in the database, handling errors and mapping failures;
+* In future updates it is possible to add some functionality to this data, whether viewing or sending this information.
 
-
-## Como Utilizar:
-* Para utilizar basta fazer as conexões como esta nas imagens abaixo:
-
+## How to Use:
+* To use, simply make the connections as shown in the images below:
 
 ![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/dcf10655-4719-4786-bfb5-48fcdfded9b8)
 
 ![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/d2ad091f-750c-480d-ba87-f1918abfd85b)
 
-* Lembrando que basta olha no [script que você vai dar upload](https://github.com/DarlanNoetzold/IotManager/blob/main/arduino_getter/arduino_getter.ino) no arduino para ver onde conectar os pinos exatamente;
-* Após subir esse script você deve executar um docker compose up no [arquivo yml](https://github.com/DarlanNoetzold/IotManager/blob/main/docker-compose.yml) que esta no repositório, ele vai inicializar o RabbitMQ;
-* Depois execute a aplicação SpringBoot para consumir as filas do RabbitMQ;
-* E por último inicialize o [script Pyhton](https://github.com/DarlanNoetzold/IotManager/blob/main/main_serial.py) para ler o Monitor Serial e mandar as informações capturadas para as filas respectivas.
-* Desta forma você verá estas informações no Monirtor Serial de cada arduino:
+* Remember that you just need to look at the [script you are going to upload](https://github.com/DarlanNoetzold/IotManager/blob/main/arduino_getter/arduino_getter.ino) on the Arduino to see exactly where to connect the pins; * After uploading this script, you must run a docker compose up on the [yml file](https://github.com/DarlanNoetzold/IotManager/blob/main/docker-compose.yml) that is in the repository, it will initialize RabbitMQ;
+* Then run the SpringBoot application to consume the RabbitMQ queues;
+* And finally, initialize the [Python script](https://github.com/DarlanNoetzold/IotManager/blob/main/main_serial.py) to read the Serial Monitor and send the captured information to the respective queues. * This way you will see this information on the Serial Monitor of each Arduino:
 
 ![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/ca2bc540-2fe3-47d3-acf0-b4acbb5f1066)
 
-* E verá essas informações sendo enviadas para suas filas específicas e sendo consumidas pelo SpringBoot, para salvar neste banco:
+* And you will see this information being sent to their specific queues and being consumed by SpringBoot, to be saved in this bank:
 
 ![image](https://github.com/DarlanNoetzold/IotManager/assets/41628589/2cfe675c-cc23-45aa-aa0f-e01d40dabdce)
 
-
 ---
-
 
 ⭐️ From [DarlanNoetzold](https://github.com/DarlanNoetzold)
